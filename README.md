@@ -1,44 +1,31 @@
-# Hello Node!
+**Title:** FitFormula
 
-This project includes a Node.js server script and a web page that connects to it. The front-end page presents a form the visitor can use to submit a color name, sending the submitted value to the back-end API running on the server. The server returns info to the page that allows it to update the display with the chosen color. 🎨
+**Description:** Welcome to FitFormula!
 
-[Node.js](https://nodejs.org/en/about/) is a popular runtime that lets you run server-side JavaScript. This project uses the [Fastify](https://www.fastify.io/) framework and explores basic templating with [Handlebars](https://handlebarsjs.com/).
+  FitFormula is a comprehensive platform - personally designed to help guide you as you begin your own unique fitness journey. Through inputting your key body attributes, such as height, weight, and age, FitFormula calculates your Body Mass Index (BMI), and provides insights into whether you fall within the underweight, normal, or overweight categories. Based on this analysis, we will have tailored to you a customized fitness plan to suit your specific needs - aligning your procedure with respect to your current physical traits. Furthermore, our website, FitFormula, allows you to set your own desired fitness goals and establish a timeline in achieving them - empowering you to work towards your ideal physique in an organized, informed, and efficient way!
 
-_Last updated: 14 August 2023_
 
-## Prerequisites
 
-You'll get best use out of this project if you're familiar with basic JavaScript. If you've written JavaScript for client-side web pages this is a little different because it uses server-side JS, but the syntax is the same!
 
-## What's in this project?
+**Outline:**
 
-← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
+*Webpage 1 - Homepage:*
 
-← `public/style.css`: The styling rules for the pages in your site.
+- Here the user can input their height, weight, health issues (using a dropdown menu), and age.
+- The page outputs the users BMI, weight classification, and wheter it is healthy in response to the users inputs
+- This page can link to every other webpage after the user has inputted the previous values.
 
-← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site back-end, one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page the visitor sees.
+*Webpage 2 - Personal Assistance Page:*
 
-← `package.json`: The NPM packages for your project's dependencies.
+- Based on the user's desired goal (in weight), the webpage will display a personalized list of tips to help their fitness journey. The tips displayed will be determined by the users current weight classification and the difference in current weight and desired weight.
+- The display will include the recomended excercise routine and diet.
 
-← `src/`: This folder holds the site template along with some basic data files.
+*Webpage 3 - Other Resources:*
 
-← `src/pages/index.hbs`: This is the main page template for your site. The template receives parameters from the server script, which it includes in the page HTML. The page sends the user submitted color value in the body of a request, or as a query parameter to choose a random color.
+- This webpage will show and link to other articles and websites that can be useful for the user such as professional advice, clarifications on fitness misconseptions, and motivational fitness stories.
+  
+**Incorporation of a JavaScript:**
 
-← `src/colors.json`: A collection of CSS color names. We use this in the server script to pick a random color, and to match searches against color names.
+  On the Homepage, JavaScript will be used to calculate the user's Body Mass Index (BMI) based on the inputs provided (height and weight). When the user inputs their details and clicks "Calculate," a JavaScript function will compute the BMI and determine the corresponding weight classification (underweight, normal, overweight). The BMI result and classification will dynamically display on the page without requiring a page reload. 
 
-← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
-
-## Try this next 🏗️
-
-Take a look in `TODO.md` for next steps you can try out in your new site!
-
-___Want a minimal version of this project to build your own Node.js app? Check out [Blank Node](https://glitch.com/edit/#!/remix/glitch-blank-node)!___
-
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
-
-## You built this with Glitch!
-
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
-
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+**Initial Wireframes can be found at the assets folder**
