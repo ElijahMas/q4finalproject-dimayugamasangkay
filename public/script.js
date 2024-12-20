@@ -26,8 +26,14 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
     }
 
     // Determine health indicator
-    const healthIndicator = weightClassification === 'Normal' ? '⭐⭐⭐⭐⭐' : '⭐⭐⭐';
-
+    var healthIndicator = weightClassification;
+    if (weightClassification === Normal) {
+      if (health-issues !== 'None') {
+        health-indicator = '⭐⭐⭐⭐' }
+      else
+        
+    }
+  
     // Update results in the DOM
     document.getElementById('bmi-result').textContent = bmi;
     document.getElementById('weight-classification').textContent = weightClassification;
