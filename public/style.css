@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #666;
+    background-color: #FB5D1C;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -53,9 +53,10 @@ label {
 }
 
 input, select, button {
-    width: 100%;
+    width: 50%; /* Adjusted to half the screen width */
     padding: 10px;
     margin-bottom: 10px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 footer {
@@ -63,4 +64,8 @@ footer {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+}
+
+.social-media {
+    margin-bottom: 10px;
 }
