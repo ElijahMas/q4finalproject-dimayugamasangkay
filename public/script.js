@@ -1,4 +1,4 @@
-document.getElementById('calculate-btn').addEventListener('click', function() {
+document.getElementById('calculate').addEventListener('click', function() {
     // Get inputs
     const height = parseFloat(document.getElementById('height').value) / 100; // Convert to meters
     const weight = parseFloat(document.getElementById('weight').value);
