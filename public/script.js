@@ -26,13 +26,14 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
     }
 
     // Determine health indicator
-    var healthIndicator = weightClassification;
-    if (weightClassification === Normal) {
-      if (health-issues !== 'None') {
-        health-indicator = '⭐⭐⭐⭐' }
-      else
-        
-    }
+  var healthIndicator = weightClassification;
+  if (weightClassification === 'Normal') {
+    if (document.getElementById('health-issues').value !== "")  
+      healthIndicator = '⭐⭐⭐⭐';
+    else
+      healthIndicator = '⭐⭐⭐⭐⭐';
+  }
+
   
     // Update results in the DOM
     document.getElementById('bmi-result').textContent = bmi;
