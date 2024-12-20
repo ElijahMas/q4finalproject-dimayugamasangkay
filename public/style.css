@@ -16,6 +16,15 @@ header {
     padding: 10px 20px;
     text-align: center;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .header-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
 }
 
 /* Main Section */
