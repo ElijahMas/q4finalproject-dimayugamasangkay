@@ -1,73 +1,67 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #FB5D1C;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-.navbar {
-    background-color: #ccc;
-    padding: 10px;
-}
-
-.navbar ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.navbar li a {
-    text-decoration: none;
-    color: black;
-}
-
-.navbar li a.active {
-    font-weight: bold;
-}
-
-main {
-    padding: 20px;
+    background-color: white;
 }
 
 .welcome {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
 }
 
-.input-section, .output-section {
+/* Header */
+header {
+    background-color: #FB5D1C;
+    padding: 10px 20px;
+    text-align: center;
     color: white;
-  border: 1px solid #ccc;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    margin-right: 200px;
+}
+
+/* Input and Output Sections */
+.input-section, .output-section {
+    border: 1px solid #ccc;
+    background-color: #50525E;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #40414F;
+    border-radius: 8px;
+    color: white;
 }
 
+/* Inputs */
 label {
     display: block;
     margin: 10px 0 5px;
 }
-
 input, select, button {
-    width: 50%; /* Adjusted to half the screen width */
+    width: 50%;
     padding: 10px;
     margin-bottom: 10px;
-    box-sizing: border-box; 
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
+/* Sidebar */
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #40414F;
+    padding: 20px 10px;
+}
+
+/* Footer */
 footer {
-    background-color: #ccc;
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
-}
-
-.social-media {
-    margin-bottom: 10px;
+    background-color: #40414F;
+   color: white;
 }
