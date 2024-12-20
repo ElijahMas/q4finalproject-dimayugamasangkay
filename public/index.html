@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitFormula - Homepage</title>
-    <link rel="stylesheet" href="style.css">
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FitFormula - Your personalized fitness assistant for calculating BMI and creating tailored fitness plans.">
+  <meta name="keywords" content="Fitness, BMI Calculator, Health, Personalized Plans">
+  <meta name="author" content="Masangkay, Elijah & Dimayuga, Manu">
+  
+  <!-- Title -->
+  <title>FitFormula - Homepage</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">FitFormula.com</div>
-    </header>
-    <nav class="fixed-sidebar">
-        <ul>
-            <li><a href="#" class="active">Homepage</a></li>
-            <li><a href="#">Personal Assistance</a></li>
-            <li><a href="#">Other Resources</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section class="welcome">
-            <h1>Welcome to FitFormula!</h1>
-            <p>FitFormula is your personalized platform to guide you on your fitness journey. Enter your details below to calculate your BMI and receive insights tailored to your needs!</p>
-        </section>
-        <hr>
-        <section class="input-section">
-            <h2>Your FitFormula</h2>
-            <form id="bmi-form">
-                <label for="height">Height (cm):</label>
-                <input type="number" id="height" required>
-                
-                <label for="weight">Weight (kg):</label>
-                <input type="number" id="weight" required>
-                
-                <label for="age">Age:</label>
-                <input type="number" id="age" required>
-                
-                <label for="health-issues">Health Issues:</label>
-                <select id="health-issues">
-                    <option value="">None</option>
-                    <option value="Diabetes">Diabetes</option>
-                    <option value="Heart Disease">Heart Disease</option>
-                    <option value="Hypertension">Hypertension</option>
-                </select>
-                <button type="button" id="calculate-btn">Calculate</button>
-            </form>
-        </section>
-        <section class="output-section">
-            <h2>Results</h2>
-            <p>BMI Result: <span id="bmi-result">---</span></p>
-            <p>Weight Classification: <span id="weight-classification">---</span></p>
-            <p>Health Indicator: <span id="health-indicator">---</span></p>
-        </section>
-    </main>
-    <footer>
-        <div class="social-media">
-            <p>Social Media Links:</p>
-            <a href="#">&#9675;</a>
-            <a href="#">&#9675;</a>
-            <a href="#">&#9675;</a>
-        </div>
-        <p>Copyright © Dimayuga, Masangkay of 9 - Cesium</p>
-    </footer>
-    <script src="script.js"></script>
+  <!-- Header -->
+  <header>
+    <h1>FitFormula</h1>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <hr>
+    <section class="welcome">
+      <h2>Welcome to FitFormula!</h2>
+      <p>FitFormula is a comprehensive platform - personally designed to help guide you as you begin your own unique fitness journey. Through inputting your key body attributes, such as height, weight, and age, FitFormula calculates your Body Mass Index (BMI), and provides insights into whether you fall within the underweight, normal, or overweight categories. Based on this analysis, we will have tailored to you a customized fitness plan to suit your specific needs - aligning your procedure with respect to your current physical traits. Furthermore, our website, FitFormula, allows you to set your own desired fitness goals and establish a timeline in achieving them - empowering you to work towards your ideal physique in an organized, informed, and efficient way!</p>
+    </section>
+    <hr>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <h3>Enter Your Details</h3>
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" placeholder="Enter height" required>
+
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" placeholder="Enter weight" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" placeholder="Enter age" required>
+
+      <label for="health-issues">Health Issues:</label>
+      <select id="health-issues">
+        <option value="">None</option>
+        <option value="Diabetes">Diabetes</option>
+        <option value="Heart Disease">Heart Disease</option>
+        <option value="Hypertension">Hypertension</option>
+      </select>
+
+      <button id="calculate">Calculate</button>
+    </section>
+
+    <!-- Output Section -->
+    <section class="output-section">
+      <h3>Your Results</h3>
+      <p>BMI Result: <span id="bmi-result">---</span></p>
+      <p>Weight Classification: <span id="weight-classification">---</span></p>
+      <p>Health Indicator: <span id="health-indicator">---</span></p>
+    </section>
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="fixed-sidebar">
+    <ul>
+      <li><a href="index.html" class="active">Homepage</a></li>
+      <li><a href="personal-assistance.html">Personal Assistance</a></li>
+      <li><a href="resources.html">Other Resources</a></li>
+    </ul>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 FitFormula. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
