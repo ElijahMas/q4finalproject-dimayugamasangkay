@@ -34,7 +34,7 @@ main {
 }
 
 /* Input and Output Sections */
-.input-section, .output-section .plan-section{
+.input-section, .output-section .plan-section {
     border: 1px solid #ccc;
     background-color: #50525E;
     padding: 20px;
