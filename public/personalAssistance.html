@@ -41,16 +41,34 @@
     <section>
       <h2>Your Personal Assistance</h2>
       <div class="user-info">
-        <p>Height: <span id="user-height"> <input type="number" id="height" placeholder="Enter height" required> </span></p>
-        <p>Weight: <span id="user-weight"> <input type="number" id="weight" placeholder="Enter weight" required></span></p>
-        <p>Age: <span id="user-age"> <input type="number" id="age" placeholder="Enter age" required> </span></p>
-        <p>Health Issues: <span id="user-health-issues">---</span></p>
-        <p>BMI: <span id="user-bmi">---</span></p>
-        <p>Weight Classification: <span id="user-weight-class">---</span></p>
+
+      <label for="age">Age: <input type="number" id="age" placeholder="Enter age" required> </label>
+      
+
+      <label for="health-issues">Health Issues:
+      <select id="health-issues">
+        <option value="">None</option>
+        <option value="Diabetes">Diabetes</option>
+        <option value="Heart Disease">Heart Disease</option>
+        <option value="Hypertension">Hypertension</option>
+      </select>
+      </label>
+        
+        <label for="bmi">BMI: <input type="number" id="bmi" placeholder="Enter BMI" required></label>
+        
+        <label for="weight-classification">Weight Classification: 
+      <select id="health-issues">
+        <option value=""> </option>
+        <option value="Underweight">Underweight</option>
+        <option value="Normal">Normal</option>
+        <option value="Overweight">Overweight</option>
+        <option value="Obese">Obese</option>
+      </select>
+      </label>
+        
       </div>
       <div class="generate-plan">
-        <label for="desired-weight">Desired weight:</label>
-        <input type="number" id="desired-weight" placeholder="Enter desired weight">
+        <label for="goal">Road to normal BMI!</label>
         <button id="generate-plan">Generate Plan</button>
       </div>
     </section>
