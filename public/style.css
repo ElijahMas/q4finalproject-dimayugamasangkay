@@ -61,7 +61,7 @@ input, select, button {
     position: fixed;
     top: 0;
     right: 0;
-    width: 175px;
+    width: 185px;
     height: 75%;
     background-color: #40414F;
     padding: 20px 10px;
@@ -69,29 +69,21 @@ input, select, button {
     line-height: 75px;
 }
 
-/* links */
+/* Links */
 a:link {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
+  color: white;
 }
 
 a:visited {
-  color: pink;
-  background-color: transparent;
-  text-decoration: none;
+  color: white;
 }
 
 a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
+  color: #FB5D1C;
 }
 
 a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
+  color: #50525E;
 }
 
 /* Footer */
