@@ -61,10 +61,12 @@ input, select, button {
     position: fixed;
     top: 0;
     right: 0;
-    width: 200px;
-    height: 100%;
+    width: 175px;
+    height: 75%;
     background-color: #40414F;
     padding: 20px 10px;
+    color: white;
+    line-height: 75px;
 }
 
 /* Footer */
