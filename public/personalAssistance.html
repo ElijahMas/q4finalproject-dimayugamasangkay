@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Title -->
-  <title>FitFormula - Personal Page</title>
-  
-  <!-- Favicon -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FitFormula - Your personalized fitness assistant for generating tailored fitness plans.">
+  <meta name="keywords" content="Fitness, Personal Assistance, BMI Calculator, Health, Personalized Plans">
+  <meta name="author" content="Masangkay, Elijah & Dimayuga, Manu">
+  <title>FitFormula - Personal Assistance</title>
   <link rel="icon" href="https://cdn.glitch.global/1a3379af-7699-458d-bdf8-9fd8f47a5f59/829410b6-f419-4107-a5b3-b2e60e45bf51.image.png?v=1734690946050">
- 
-  <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-  
 <body>
   <!-- Header -->
   <header>
@@ -18,28 +17,56 @@
     <h1>FitFormula</h1>
   </header>
 
-    <!-- Sidebar -->
+  <!-- Main Section -->
+  <main>
+    <h2>Your Personal Assistance</h2>
+    <hr>
+    <section class="personal-info">
+      <h3>Your <span style="color: #FB5D1C;">FitFormula</span></h3>
+      <p>Height: <span id="user-height">---</span> cm</p>
+      <p>Weight: <span id="user-weight">---</span> kg</p>
+      <p>Age: <span id="user-age">---</span></p>
+      <p>Health Issues: <span id="user-health-issues">---</span></p>
+      <p>BMI: <span id="user-bmi">---</span></p>
+      <p>Weight Classification: <span id="user-weight-class">---</span></p>
+    </section>
+    <section class="desired-weight">
+      <label for="desired-weight">Desired weight:</label>
+      <input type="number" id="desired-weight" placeholder="Enter your desired weight">
+      <button id="generate-plan">Generate Plan</button>
+    </section>
+    <section class="plan-section">
+      <h3>Recommended Weekly Exercise & Dieting Plan:</h3>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</li>
+        <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</li>
+      </ul>
+    </section>
+    <section class="resources-section">
+      <h3>Other Resources:</h3>
+      <article>
+        <h4>“Article 1”</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Sidebar -->
   <aside class="fixed-sidebar">
     <ul>
-      <li><a href="index.html" class="active">Homepage</a></li>
-      <li><a href="personalAssistance.html">Personal Assistance</a></li>
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="personalAssistance.html" class="active">Personal Assistance</a></li>
       <li><a href="resources.html">Other Resources</a></li>
     </ul>
   </aside>
-  
-  <main>
-    <hr>
-    <section class="welcome">
-      <h2>Welcome to your personal fitness helper!</h2>
-      <p>Based on the your own desired goal (in weight), we will display just for you a personalized list of tips to help your fitness journey. The tips you will see will be based off of your weight classification and the weight you want to lose/gain. </p>
-      <p>We will give you what you need, from what excercises we think will fit you to diets that may help your fitness journey: all in one place!</p>
-    </section>
-    <hr>
-  </main>
-    
+
   <!-- Footer -->
   <footer>
     <p>&copy; Dimayuga, Masangkay of 9-Cesium. All Rights Reserved.</p>
   </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
