@@ -40,11 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const exercisePlan = document.getElementById('exercise-plan');
 
   generatePlanButton.addEventListener('click', function () {
-    // Get user inputs
-    const age = document.getElementById('age').value;
-    const healthIssues = document.getElementById('health-issues').value;
-    const bmi = document.getElementById('bmi').value;
-    const weightClassification = document.getElementById('health-issues-b').value;
+  console.log("Generate Plan button clicked!");
+  
+  const age = document.getElementById('age').value;
+  const healthIssues = document.getElementById('health-issues-b').value;
+  const bmi = document.getElementById('bmi').value;
+  const weightClassification = document.getElementById('health-issues-b').value;
+  
+  console.log({ age, healthIssues, bmi, weightClassification });
+  });
 
     // Validate required fields
     if (!age || !bmi || !weightClassification) {
