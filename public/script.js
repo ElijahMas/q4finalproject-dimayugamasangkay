@@ -32,49 +32,7 @@ document.getElementById('calculate').addEventListener('click', function() {
     document.getElementById('bmi-result').textContent = bmi;
     document.getElementById('weight-classification').textContent = weightClassification;
     document.getElementById('health-indicator').textContent = healthIndicator;
+
+    // Make the output section visible
+    document.getElementById('output-section').style.display = 'block';
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-  const generatePlanButton = document.getElementById('generate-plan');
-  const outputSection = document.getElementById('output-section');
-  const exercisePlan = document.getElementById('exercise-plan');
-
-  generatePlanButton.addEventListener('click', function () {
-  console.log("Generate Plan button clicked!");
-  
-  const age = document.getElementById('age').value;
-  const healthIssues = document.getElementById('health-issues-b').value;
-  const bmi = document.getElementById('bmi').value;
-  const weightClassification = document.getElementById('health-issues-b').value;
-  
-  console.log({ age, healthIssues, bmi, weightClassification });
-  });
-
-    // Validate required fields
-    if (!age || !bmi || !weightClassification) {
-      alert('Please complete all required fields: Age, BMI, and Weight Classification.');
-      return;
-    }
-
-    // Generate output message
-    let outputMessage = '';
-    if (weightClassification === 'Normal' && healthIssues === 'None') {
-      outputMessage = 'Normal BMI with no health conditions.';
-    } else if (weightClassification === 'Normal' && healthIssues !== 'None') {
-      outputMessage = `Normal BMI with ${healthIssues}.`;
-    } else if (weightClassification === 'Underweight') {
-      outputMessage = `Underweight with ${healthIssues || 'no health conditions'}.`;
-    } else if (weightClassification === 'Overweight') {
-      outputMessage = `Overweight with ${healthIssues || 'no health conditions'}.`;
-    } else if (weightClassification === 'Obese') {
-      outputMessage = `Obese with ${healthIssues || 'no health conditions'}.`;
-    } else {
-      outputMessage = 'Unspecified weight classification or health condition.';
-    }
-
-    // Display the output
-    exercisePlan.innerHTML = `<li>${outputMessage}</li>`;
-    outputSection.style.display = 'block';
-  });
-});
-
