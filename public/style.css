@@ -38,7 +38,7 @@ main {
 }
 
 /* Input and Output Sections */
-.input-section, .output-section .user-info {
+.input-section, .output-section {
     border: 1px solid #ccc;
     background-color: #50525E;
     padding: 20px;
@@ -97,4 +97,33 @@ footer {
     background-color: #40414F;
     color: white;
     margin-top: auto;
+}
+
+/* Resources Page Specific Styles */
+.resources-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+}
+
+.resources-section article {
+    background-color: #50525E; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.resources-section article h3 {
+    margin-top: 0;
+}
+
+.resources-section article a {
+    color: white;
+    text-decoration: none;
+}
+
+.resources-section article a:hover {
+    text-decoration: underline;
+    color: #FB5D1C;
 }
