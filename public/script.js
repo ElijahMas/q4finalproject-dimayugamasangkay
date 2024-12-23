@@ -1,3 +1,44 @@
+document.addEventListener('DOMContentLoaded', function () {
+  console.log("Script loaded");
+
+  // Homepage Logic
+  const calculateButton = document.getElementById('calculate');
+  if (calculateButton) {
+    calculateButton.addEventListener('click', function () {
+      console.log("Calculate BMI button clicked");
+
+      const height = parseFloat(document.getElementById('height').value) / 100;
+      const weight = parseFloat(document.getElementById('weight').value);
+      const age = parseInt(document.getElementById('age').value);
+
+      if (isNaN(height) || isNaN(weight) || isNaN(age) || height <= 0 || weight <= 0 || age <= 0) {
+        alert('Please enter valid numeric values for height, weight, and age.');
+        return;
+      }
+
+      const bmi = (weight / (height * height)).toFixed(1);
+      let weightClassification = '';
+
+      if (bmi < 18.5) {
+        weightClassification = 'Underweight';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        weightClassification = 'Normal';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        weightClassification = 'Overweight';
+      } else {
+        weightClassification = 'Obese';
+      }
+
+      const healthIndicator = weightClassification === 'Normal' ? '⭐⭐⭐⭐⭐' : '⭐⭐⭐';
+
+      document.getElementById('bmi-result').textContent = bmi;
+      document.getElementById('weight-classification').textContent = weightClassification;
+      document.getElementById('health-indicator').textContent = healthIndicator;
+      document.getElementById('output-section').style.display = 'block';
+    });
+  }
+
+  // Personal Assistance Logic
 document.getElementById('generate-plan-button').addEventListener('click', function () {
   console.log("Generate Plan button clicked");
 
@@ -41,10 +82,10 @@ document.getElementById('generate-plan-button').addEventListener('click', functi
         <li>Day 2: Chair-assisted strength exercises.</li>
         <li>Day 3: Light yoga or stretching for mobility.</li>
       </ul>
-    `
-  };
+  }
+
 
   const exercisePlan = document.getElementById('exercise-plan');
   exercisePlan.innerHTML = plans[weightClassification] || '<p>No plan available for the selected classification.</p>';
   document.getElementById('output-section').style.display = 'block';
-});
+}
