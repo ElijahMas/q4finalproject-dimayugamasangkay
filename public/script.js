@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Logic for the homepage
+  console.log("Script loaded");
+
+  // Homepage Logic
   const calculateButton = document.getElementById('calculate');
   if (calculateButton) {
     calculateButton.addEventListener('click', function () {
-      // Get inputs
-      const height = parseFloat(document.getElementById('height').value) / 100; // Convert to meters
+      console.log("Calculate BMI button clicked");
+
+      const height = parseFloat(document.getElementById('height').value) / 100;
       const weight = parseFloat(document.getElementById('weight').value);
       const age = parseInt(document.getElementById('age').value);
 
-      // Validate inputs
       if (isNaN(height) || isNaN(weight) || isNaN(age) || height <= 0 || weight <= 0 || age <= 0) {
         alert('Please enter valid numeric values for height, weight, and age.');
         return;
       }
 
-      // Calculate BMI
       const bmi = (weight / (height * height)).toFixed(1);
-
-      // Determine weight classification
       let weightClassification = '';
+
       if (bmi < 18.5) {
         weightClassification = 'Underweight';
       } else if (bmi >= 18.5 && bmi < 24.9) {
@@ -29,35 +29,23 @@ document.addEventListener('DOMContentLoaded', function () {
         weightClassification = 'Obese';
       }
 
-      // Determine health indicator
       const healthIndicator = weightClassification === 'Normal' ? '⭐⭐⭐⭐⭐' : '⭐⭐⭐';
 
-      // Update results in the DOM
       document.getElementById('bmi-result').textContent = bmi;
       document.getElementById('weight-classification').textContent = weightClassification;
       document.getElementById('health-indicator').textContent = healthIndicator;
-
-      // Make the output section visible
       document.getElementById('output-section').style.display = 'block';
     });
   }
 
-  // Logic for the personal assistance page
+  // Personal Assistance Logic
   const generatePlanButton = document.getElementById('generate-plan-button');
   if (generatePlanButton) {
     generatePlanButton.addEventListener('click', function () {
-      // Get user inputs
-      const age = parseInt(document.getElementById('age').value);
-      const healthIssues = document.getElementById('health-issues').value;
-      const weightClassification = document.getElementById('weight-classification-input').value; // Use a different ID to avoid conflicts
+      console.log("Generate Plan button clicked");
 
-      // Validate inputs
-      if (isNaN(age) || !weightClassification) {
-        alert('Please provide valid inputs for age and weight classification.');
-        return;
-      }
+      const weightClassification = document.getElementById('weight-classification-input').value;
 
-      // Plans based on weight classification
       const plans = {
         Underweight: `
           <h4>Underweight Plan:</h4>
@@ -93,11 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
         `
       };
 
-      // Display the appropriate plan
-      const outputSection = document.getElementById('output-section');
       const exercisePlan = document.getElementById('exercise-plan');
       exercisePlan.innerHTML = plans[weightClassification] || '<p>No plan available for the selected classification.</p>';
-      outputSection.style.display = 'block';
+      document.getElementById('output-section').style.display = 'block';
     });
   }
 });
