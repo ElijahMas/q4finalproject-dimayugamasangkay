@@ -4,6 +4,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .welcome {
@@ -31,53 +34,30 @@ header .header-icon {
 main {
     padding: 20px;
     margin-right: 200px;
+    flex: 1;
 }
 
 /* Input and Output Sections */
-.input-section, .output-section, .user-info {
+.input-section, .output-section .user-info {
     border: 1px solid #ccc;
-    background-color: #F0F0F0; /* Changed to match homepage */
+    background-color: #50525E;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    color: #333; /* Changed to match homepage */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for modern design */
+    color: white;
 }
 
 /* Inputs */
 label {
     display: block;
     margin: 10px 0 5px;
-    font-weight: bold; /* Ensure labels are bold for better readability */
-    color: #444; /* Darker color for text */
 }
 input, select, button {
-    width: 80%; /* Wider inputs for better alignment */
+    width: 50%;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    font-size: 16px; /* Slightly larger font for inputs */
-    color: #333;
-}
-input:focus, select:focus {
-    border-color: #FB5D1C; /* Highlight input fields on focus */
-    outline: none;
-    box-shadow: 0 0 5px rgba(251, 93, 28, 0.5); /* Add a glowing effect */
-}
-
-/* Buttons */
-button {
-    background-color: #FB5D1C;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #e14b17;
 }
 
 /* Sidebar */
@@ -116,4 +96,5 @@ footer {
     padding: 10px;
     background-color: #40414F;
     color: white;
+    margin-top: auto;
 }
