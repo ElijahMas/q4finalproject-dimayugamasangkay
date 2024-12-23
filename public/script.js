@@ -38,7 +38,7 @@ document.getElementById('calculate').addEventListener('click', function() {
 });
 
 document.getElementById('generate-plan-button').addEventListener('click', function () {
-  // Get inputs
+  // Get user inputs
   const age = parseInt(document.getElementById('age').value);
   const healthIssues = document.getElementById('health-issues').value;
   const weightClassification = document.getElementById('weight-classification').value;
@@ -49,37 +49,45 @@ document.getElementById('generate-plan-button').addEventListener('click', functi
     return;
   }
 
-  // Determine output message
-  let outputMessage = '';
-  if (age > 18 && healthIssues === 'None' && weightClassification === 'Normal') {
-    outputMessage = '18, none, normal';
-  } else if (age > 18 && healthIssues === 'None' && weightClassification === 'Underweight') {
-    outputMessage = '18, none, underweight';
-  } else if (age > 18 && healthIssues === 'None' && weightClassification === 'Overweight') {
-    outputMessage = '18, none, overweight';
-  } else if (age > 18 && healthIssues !== 'None' && weightClassification === 'Normal') {
-    outputMessage = '18, yes health issues, normal';
-  } else if (age > 18 && healthIssues !== 'None' && weightClassification === 'Underweight') {
-    outputMessage = '18, yes health issues, underweight';
-  } else if (age > 18 && healthIssues !== 'None' && weightClassification === 'Overweight') {
-    outputMessage = '18, yes health issues, overweight';
-  } else if (age <= 18 && healthIssues === 'None' && weightClassification === 'Normal') {
-    outputMessage = 'below 18, none, normal';
-  } else if (age <= 18 && healthIssues === 'None' && weightClassification === 'Underweight') {
-    outputMessage = 'below 18, none, underweight';
-  } else if (age <= 18 && healthIssues === 'None' && weightClassification === 'Overweight') {
-    outputMessage = 'below 18, none, overweight';
-  } else if (age <= 18 && healthIssues !== 'None' && weightClassification === 'Normal') {
-    outputMessage = 'below 18, yes health issues, normal';
-  } else if (age <= 18 && healthIssues !== 'None' && weightClassification === 'Underweight') {
-    outputMessage = 'below 18, yes health issues, underweight';
-  } else if (age <= 18 && healthIssues !== 'None' && weightClassification === 'Overweight') {
-    outputMessage = 'below 18, yes health issues, overweight';
-  }
+  // Plans based on weight classification
+  const plans = {
+    Underweight: `
+      <h4>Underweight Plan:</h4>
+      <ul>
+        <li>Day 1: Light cardio, high-calorie meal planning.</li>
+        <li>Day 2: Strength training, focus on compound movements.</li>
+        <li>Day 3: Rest and recovery with yoga or light stretching.</li>
+      </ul>
+    `,
+    Normal: `
+      <h4>Normal Plan:</h4>
+      <ul>
+        <li>Day 1: 30-minute run, bodyweight exercises.</li>
+        <li>Day 2: Gym session focusing on full-body strength training.</li>
+        <li>Day 3: Rest or engage in a recreational sport.</li>
+      </ul>
+    `,
+    Overweight: `
+      <h4>Overweight Plan:</h4>
+      <ul>
+        <li>Day 1: 45-minute brisk walk, low-impact cardio.</li>
+        <li>Day 2: Strength training with focus on core and legs.</li>
+        <li>Day 3: Active recovery with swimming or cycling.</li>
+      </ul>
+    `,
+    Obese: `
+      <h4>Obese Plan:</h4>
+      <ul>
+        <li>Day 1: Low-impact walking or water aerobics.</li>
+        <li>Day 2: Chair-assisted strength exercises.</li>
+        <li>Day 3: Light yoga or stretching for mobility.</li>
+      </ul>
+    `
+  };
 
-  // Display output
+  // Display the appropriate plan
   const outputSection = document.getElementById('output-section');
   const exercisePlan = document.getElementById('exercise-plan');
-  exercisePlan.innerHTML = `<li>${outputMessage}</li>`;
+  exercisePlan.innerHTML = plans[weightClassification] || '<p>No plan available for the selected classification.</p>';
   outputSection.style.display = 'block';
 });
