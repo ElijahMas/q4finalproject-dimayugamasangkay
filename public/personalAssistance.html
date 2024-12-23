@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Title -->
   <title>FitFormula - Personal Page</title>
-  
-  <!-- Favicon -->
   <link rel="icon" href="https://cdn.glitch.global/1a3379af-7699-458d-bdf8-9fd8f47a5f59/829410b6-f419-4107-a5b3-b2e60e45bf51.image.png?v=1734690946050">
- 
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-
+  <script defer src="script.js"></script> <!-- Use `defer` to load JS after HTML -->
 </head>
-  
 <body>
-  <!-- Header -->
   <header>
     <img src="https://cdn.glitch.global/1a3379af-7699-458d-bdf8-9fd8f47a5f59/829410b6-f419-4107-a5b3-b2e60e45bf51.image.png?v=1734690946050" alt="FitFormula Icon" class="header-icon">
     <h1>FitFormula</h1>
   </header>
 
-    <!-- Sidebar -->
   <aside class="fixed-sidebar">
     <ul>
       <li><a href="index.html" class="active">Homepage</a></li>
@@ -27,68 +19,49 @@
       <li><a href="resources.html">Other Resources</a></li>
     </ul>
   </aside>
-  
+
   <main>
     <hr>
     <section class="welcome">
       <h2>Welcome to your personal fitness helper!</h2>
-      <p>Based on the your own desired goal (in weight), we will display just for you a personalized list of tips to help your fitness journey. The tips you will see will be based off of your weight classification and the weight you want to lose/gain. </p>
-      <p>We will give you what you need, from what excercises we think will fit you to diets that may help your fitness journey: all in one place!</p>
+      <p>We provide personalized tips for your fitness journey based on your goals, weight classification, and more.</p>
     </section>
     <hr>
-    
-    <!-- Input Section -->
-  <main>
     <section>
       <h2>Your Personal Assistance</h2>
-      <div class="user-info">
-
-    <label for="age">Age: <input type="number" id="age" placeholder="Enter age" required></label>
-
-<label for="health-issues">Health Issues:
-  <select id="health-issues">
-    <option value="None">None</option>
-    <option value="Diabetes">Diabetes</option>
-    <option value="Heart Disease">Heart Disease</option>
-    <option value="Hypertension">Hypertension</option>
-  </select>
-</label>
-
-<label for="bmi">BMI: <input type="number" id="bmi" placeholder="Enter BMI" required></label>
-
-<label for="weight-classification">Weight Classification: 
-  <select id="health-issues-b">
-    <option value="">Select...</option>
-    <option value="Underweight">Underweight</option>
-    <option value="Normal">Normal</option>
-    <option value="Overweight">Overweight</option>
-    <option value="Obese">Obese</option>
-  </select>
-</label>
-
-        
+      <div id="user-info">
+        <label for="age">Age: <input type="number" id="age" placeholder="Enter age" required></label>
+        <label for="health-issues">Health Issues:
+          <select id="health-issues">
+            <option value="None">None</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="Heart Disease">Heart Disease</option>
+            <option value="Hypertension">Hypertension</option>
+          </select>
+        </label>
+        <label for="bmi">BMI: <input type="number" id="bmi" placeholder="Enter BMI" required></label>
+        <label for="weight-classification">Weight Classification:
+          <select id="weight-classification">
+            <option value="">Select...</option>
+            <option value="Underweight">Underweight</option>
+            <option value="Normal">Normal</option>
+            <option value="Overweight">Overweight</option>
+            <option value="Obese">Obese</option>
+          </select>
+        </label>
       </div>
       <div class="generate-plan">
-        <label for="goal">Road to your fitness!</label>
-        <button id="generate-plan">Generate Plan</button>
+        <button id="generate-plan-button">Generate Plan</button>
       </div>
     </section>
-
-    
-    <!-- Ouput Section -->
-<section id="output-section" style="display: none;">
-  <h3>Recommended Weekly Exercise and Dieting Plan:</h3>
-  <ul id="exercise-plan">
-    <!-- Content will be dynamically generated -->
-  </ul>
-</section>
-
+    <section id="output-section" style="display: none;">
+      <h3>Recommended Weekly Exercise and Dieting Plan:</h3>
+      <ul id="exercise-plan">
+        <!-- Content will be dynamically generated -->
+      </ul>
+    </section>
   </main>
 
-    
-  </main>
-    
-  <!-- Footer -->
   <footer>
     <p>&copy; Dimayuga, Masangkay of 9-Cesium. All Rights Reserved.</p>
   </footer>
