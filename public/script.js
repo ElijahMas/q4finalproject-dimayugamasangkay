@@ -34,48 +34,43 @@ document.getElementById('calculate').addEventListener('click', function() {
     document.getElementById('health-indicator').textContent = healthIndicator;
 });
 
-document.getElementById('generate-plan').addEventListener('click', function () {
-  // Get user inputs
-  const age = document.getElementById('age').value;
-  const healthIssues = document.getElementById('health-issues').value;
-  const bmi = document.getElementById('bmi').value;
-  const weightClassification = document.getElementById('health-issues-b').value;
-
-  // Validate required inputs
-  if (!age || !bmi || !weightClassification) {
-    alert('Please complete all required fields: Age, BMI, and Weight Classification.');
-    return;
-  }
-
-  // Determine the output message based on user inputs
-  let outputMessage = '';
-
-  if (weightClassification === 'Normal' && !healthIssues) {
-    outputMessage = 'Normal BMI with no health conditions.';
-  } else if (weightClassification === 'Normal' && healthIssues) {
-    outputMessage = `Normal BMI with ${healthIssues}.`;
-  } else if (weightClassification === 'Underweight') {
-    outputMessage = `Underweight with ${healthIssues || 'no health conditions'}.`;
-  } else if (weightClassification === 'Overweight') {
-    outputMessage = `Overweight with ${healthIssues || 'no health conditions'}.`;
-  } else if (weightClassification === 'Obese') {
-    outputMessage = `Obese with ${healthIssues || 'no health conditions'}.`;
-  } else {
-    outputMessage = 'Unspecified weight classification or health condition.';
-  }
-
-  // Display the output in the output section
+document.addEventListener('DOMContentLoaded', function () {
+  const generatePlanButton = document.getElementById('generate-plan');
   const outputSection = document.getElementById('output-section');
-  const planList = document.getElementById('exercise-plan');
+  const exercisePlan = document.getElementById('exercise-plan');
 
-  // Clear any previous content
-  planList.innerHTML = '';
+  generatePlanButton.addEventListener('click', function () {
+    // Get user inputs
+    const age = document.getElementById('age').value;
+    const healthIssues = document.getElementById('health-issues').value;
+    const bmi = document.getElementById('bmi').value;
+    const weightClassification = document.getElementById('health-issues-b').value;
 
-  // Add the output message
-  const listItem = document.createElement('li');
-  listItem.textContent = outputMessage;
-  planList.appendChild(listItem);
+    // Validate required fields
+    if (!age || !bmi || !weightClassification) {
+      alert('Please complete all required fields: Age, BMI, and Weight Classification.');
+      return;
+    }
 
-  // Show the output section
-  outputSection.style.display = 'block';
+    // Generate output message
+    let outputMessage = '';
+    if (weightClassification === 'Normal' && healthIssues === 'None') {
+      outputMessage = 'Normal BMI with no health conditions.';
+    } else if (weightClassification === 'Normal' && healthIssues !== 'None') {
+      outputMessage = `Normal BMI with ${healthIssues}.`;
+    } else if (weightClassification === 'Underweight') {
+      outputMessage = `Underweight with ${healthIssues || 'no health conditions'}.`;
+    } else if (weightClassification === 'Overweight') {
+      outputMessage = `Overweight with ${healthIssues || 'no health conditions'}.`;
+    } else if (weightClassification === 'Obese') {
+      outputMessage = `Obese with ${healthIssues || 'no health conditions'}.`;
+    } else {
+      outputMessage = 'Unspecified weight classification or health condition.';
+    }
+
+    // Display the output
+    exercisePlan.innerHTML = `<li>${outputMessage}</li>`;
+    outputSection.style.display = 'block';
+  });
 });
+
