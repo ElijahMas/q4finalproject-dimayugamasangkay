@@ -56,33 +56,33 @@ document.addEventListener('DOMContentLoaded', function () {
         Underweight: `
           <h4>Underweight Plan:</h4>
           <ul>
-            <li>Day 1: Light cardio, high-calorie meal planning.</li>
-            <li>Day 2: Strength training, focus on compound movements.</li>
-            <li>Day 3: Rest and recovery with yoga or light stretching.</li>
+            <li> Light cardio, high-calorie meal planning.</li>
+            <li> Strength training, focus on compound movements.</li>
+            <li> Rest and recovery with yoga or light stretching.</li>
           </ul>
         `,
         Normal: `
           <h4>Normal Plan:</h4>
           <ul>
-            <li>Day 1: 30-minute run, bodyweight exercises.</li>
-            <li>Day 2: Gym session focusing on full-body strength training.</li>
-            <li>Day 3: Rest or engage in a recreational sport.</li>
+            <li> 30-minute run, bodyweight exercises.</li>
+            <li> Gym session focusing on full-body strength training.</li>
+            <li> Rest or engage in a recreational sport.</li>
           </ul>
         `,
         Overweight: `
           <h4>Overweight Plan:</h4>
           <ul>
-            <li>Day 1: 45-minute brisk walk, low-impact cardio.</li>
-            <li>Day 2: Strength training with focus on core and legs.</li>
-            <li>Day 3: Active recovery with swimming or cycling.</li>
+            <li> 45-minute brisk walk, low-impact cardio.</li>
+            <li> Strength training with focus on core and legs.</li>
+            <li> Active recovery with swimming or cycling.</li>
           </ul>
         `,
         Obese: `
           <h4>Obese Plan:</h4>
           <ul>
-            <li>Day 1: Low-impact walking or water aerobics.</li>
-            <li>Day 2: Chair-assisted strength exercises.</li>
-            <li>Day 3: Light yoga or stretching for mobility.</li>
+            <li> Low-impact walking or water aerobics.</li>
+            <li> Chair-assisted strength exercises.</li>
+            <li> Light yoga or stretching for mobility.</li>
           </ul>
         `
       };
