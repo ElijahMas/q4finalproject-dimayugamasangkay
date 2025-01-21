@@ -139,8 +139,8 @@ footer {
 }
 
 #articleE iframe {
-    height: 180px;
-    width: 320px;
+    height: 200px;
+    width: 356px;
     border-radius: 8px;
     object-fit: cover; /* Ensures the image fills the space without distortion */
 }
