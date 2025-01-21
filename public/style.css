@@ -118,23 +118,30 @@ footer {
 }
 
 #articleB img {
-    width: 100px; /* Adjust size as needed */
-    height: 130px;
-    border-radius: 4px;
+    width: 200px; /* Adjust size as needed */
+    height: 260px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
 #articleC img {
-    height: 110px;
-    width: 160px;
-    border-radius: 4px;
+    height: 220px;
+    width: 320px;
+    border-radius: 8px;
     object-fit: cover; /* Ensures the image fills the space without distortion */
 }
 
 #articleD img {
-    height: 90px;
-    width: 160px;
-    border-radius: 4px;
+    height: 180px;
+    width: 320px;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+}
+
+#articleE iframe {
+    height: 180px;
+    width: 320px;
+    border-radius: 8px;
     object-fit: cover; /* Ensures the image fills the space without distortion */
 }
 
