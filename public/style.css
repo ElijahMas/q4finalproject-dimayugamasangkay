@@ -104,18 +104,27 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    color: white;
 }
 
 .resources-section article {
+    display: flex; /* Enables side-by-side layout */
+    gap: 10px; /* Space between image and text */
+    align-items: center;
     background-color: #50525E; 
-    padding: 15px;
+    padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 8px;
+    color: white;
+}
+
+.resources-section article img {
+    width: 110px; /* Adjust size as needed */
+    height: 110px;
     border-radius: 8px;
 }
 
-.resources-section article h3 {
-    margin-top: 0;
+.resources-section article div {
+    flex: 1; /* Ensures text takes up remaining space */
 }
 
 .resources-section article a {
@@ -127,4 +136,3 @@ footer {
     text-decoration: underline;
     color: #FB5D1C;
 }
-
