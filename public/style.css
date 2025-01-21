@@ -131,6 +131,13 @@ footer {
     object-fit: cover; /* Ensures the image fills the space without distortion */
 }
 
+#articleD img {
+    height: 90px;
+    width: 160px;
+    border-radius: 4px;
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+}
+
 .resources-section article div {
     flex: 1; /* Ensures text takes up remaining space */
 }
