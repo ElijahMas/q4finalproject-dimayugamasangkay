@@ -107,8 +107,8 @@ footer {
 }
 
 .resources-section article {
-    display: flex; /* Enables side-by-side layout */
-    gap: 10px; /* Space between image and text */
+    display: flex; 
+    gap: 10px; 
     align-items: center;
     background-color: #50525E; 
     padding: 10px;
@@ -118,7 +118,7 @@ footer {
 }
 
 #articleB img {
-    width: 200px; /* Adjust size as needed */
+    width: 200px; 
     height: 260px;
     border-radius: 8px;
     object-fit: cover;
@@ -128,25 +128,25 @@ footer {
     height: 220px;
     width: 320px;
     border-radius: 8px;
-    object-fit: cover; /* Ensures the image fills the space without distortion */
+    object-fit: cover; 
 }
 
 #articleD img {
     height: 180px;
     width: 320px;
     border-radius: 8px;
-    object-fit: cover; /* Ensures the image fills the space without distortion */
+    object-fit: cover;
 }
 
 #articleE iframe {
     height: 200px;
     width: 356px;
     border-radius: 8px;
-    object-fit: cover; /* Ensures the image fills the space without distortion */
+    object-fit: cover; 
 }
 
 .resources-section article div {
-    flex: 1; /* Ensures text takes up remaining space */
+    flex: 1; 
 }
 
 .resources-section article a {
@@ -160,11 +160,11 @@ footer {
 }
 
 #exercise-plan a {
-    color: #FB5D1C; /* Bright orange color */
+    color: #FB5D1C; 
     text-decoration: none;
 }
 
 #exercise-plan a:hover {
-    color: #FF7F50; /* Lighter shade of orange on hover */
+    color: #FF7F50; 
     text-decoration: underline;
 }
