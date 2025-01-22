@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li> Strength training, focus on compound movements.</li>
             <li> Rest and recovery with yoga or light stretching.</li>
           </ul>
+          <a href="https://www.healthline.com/health/exercise-to-gain-weight#what-to-avoid">ajhfjkhd</a>
         `,
         Normal: `
           <h4>Normal Plan:</h4>
