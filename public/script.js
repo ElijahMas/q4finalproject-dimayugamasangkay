@@ -56,34 +56,37 @@ document.addEventListener('DOMContentLoaded', function () {
         Underweight: `
           <h4>Underweight Plan:</h4>
           <ul>
-            <li> Light cardio, high-calorie meal planning.</li>
-            <li> Strength training, focus on compound movements.</li>
-            <li> Rest and recovery with yoga or light stretching.</li>
+            <li>Light cardio, high-calorie meal planning.</li>
+            <li>Strength training, focus on compound movements.</li>
+            <li>Rest and recovery with yoga or light stretching.</li>
+            <li><a href="https://www.healthline.com/health/exercise-to-gain-weight#what-to-avoid" target="_blank">Learn more about exercises to gain weight</a></li>
           </ul>
-          <a href="https://www.healthline.com/health/exercise-to-gain-weight#what-to-avoid">ajhfjkhd</a>
         `,
         Normal: `
           <h4>Normal Plan:</h4>
           <ul>
-            <li> 30-minute run, bodyweight exercises.</li>
-            <li> Gym session focusing on full-body strength training.</li>
-            <li> Rest or engage in a recreational sport.</li>
+            <li>30-minute run, bodyweight exercises.</li>
+            <li>Gym session focusing on full-body strength training.</li>
+            <li>Rest or engage in a recreational sport.</li>
+            <li><a id="output" href="https://www.planetfitness.com/community/articles/beginner-workout-plan-your-first-week-gym" target="_blank">Beginner workout plan for your first week at the gym</a></li>
           </ul>
         `,
         Overweight: `
           <h4>Overweight Plan:</h4>
           <ul>
-            <li> 45-minute brisk walk, low-impact cardio.</li>
-            <li> Strength training with focus on core and legs.</li>
-            <li> Active recovery with swimming or cycling.</li>
+            <li>45-minute brisk walk, low-impact cardio.</li>
+            <li>Strength training with focus on core and legs.</li>
+            <li>Active recovery with swimming or cycling.</li>
+            <li><a href="https://www.nyp.org/patients-and-visitors/advances-consumers/issues/exercising-when-overweight-moderation-is-key" target="_blank">Tips for exercising when overweight</a></li>
           </ul>
         `,
         Obese: `
           <h4>Obese Plan:</h4>
           <ul>
-            <li> Low-impact walking or water aerobics.</li>
-            <li> Chair-assisted strength exercises.</li>
-            <li> Light yoga or stretching for mobility.</li>
+            <li>Low-impact walking or water aerobics.</li>
+            <li>Chair-assisted strength exercises.</li>
+            <li>Light yoga or stretching for mobility.</li>
+            <li><a href="https://www.medicalnewstoday.com/articles/exercise-for-obese-people#best-types" target="_blank">Best exercises for people with obesity</a></li>
           </ul>
         `
       };

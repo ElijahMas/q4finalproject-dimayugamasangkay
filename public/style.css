@@ -158,3 +158,11 @@ footer {
     text-decoration: underline;
     color: #FB5D1C;
 }
+
+#output a:link {
+  color: black;
+}
+
+#output a:visited {
+  color: black;
+}
