@@ -44,52 +44,69 @@ document.addEventListener('DOMContentLoaded', function () {
     generatePlanButton.addEventListener('click', function () {
       console.log("Generate Plan button clicked");
 
-      const weightClassificationInput = document.getElementById('weight-classification-input');
-      if (!weightClassificationInput) {
-        console.error("Element with ID 'weight-classification-input' not found!");
-        return;
-      }
-
-      const weightClassification = weightClassificationInput.value;
-
       const plans = {
-        Underweight: `
-          <h4>Underweight Plan:</h4>
-          <ul>
-            <li>Light cardio, high-calorie meal planning.</li>
-            <li>Strength training, focus on compound movements.</li>
-            <li>Rest and recovery with yoga or light stretching.</li>
-            <li><a href="https://www.healthline.com/health/exercise-to-gain-weight#what-to-avoid" target="_blank">Learn more about exercises to gain weight</a></li>
-          </ul>
-        `,
-        Normal: `
-          <h4>Normal Plan:</h4>
-          <ul>
-            <li>30-minute run, bodyweight exercises.</li>
-            <li>Gym session focusing on full-body strength training.</li>
-            <li>Rest or engage in a recreational sport.</li>
-            <li><a id="output" href="https://www.planetfitness.com/community/articles/beginner-workout-plan-your-first-week-gym" target="_blank">Beginner workout plan for your first week at the gym</a></li>
-          </ul>
-        `,
-        Overweight: `
-          <h4>Overweight Plan:</h4>
-          <ul>
-            <li>45-minute brisk walk, low-impact cardio.</li>
-            <li>Strength training with focus on core and legs.</li>
-            <li>Active recovery with swimming or cycling.</li>
-            <li><a href="https://www.nyp.org/patients-and-visitors/advances-consumers/issues/exercising-when-overweight-moderation-is-key" target="_blank">Tips for exercising when overweight</a></li>
-          </ul>
-        `,
-        Obese: `
-          <h4>Obese Plan:</h4>
-          <ul>
-            <li>Low-impact walking or water aerobics.</li>
-            <li>Chair-assisted strength exercises.</li>
-            <li>Light yoga or stretching for mobility.</li>
-            <li><a href="https://www.medicalnewstoday.com/articles/exercise-for-obese-people#best-types" target="_blank">Best exercises for people with obesity</a></li>
-          </ul>
-        `
-      };
+  Underweight: `
+    <h4>Underweight Plan:</h4>
+    <ul>
+      <li>Light cardio, high-calorie meal planning.</li>
+      <li>Strength training, focus on compound movements.</li>
+      <li>Rest and recovery with yoga or light stretching.</li>
+      <li>
+        <a href="https://www.healthline.com/health/exercise-to-gain-weight#what-to-avoid" target="_blank">
+          Learn more about exercises to gain weight
+        </a>
+        <br>
+        <img src="https://via.placeholder.com/150?text=Underweight+Tips" alt="Underweight Exercise Tips">
+      </li>
+    </ul>
+  `,
+  Normal: `
+    <h4>Normal Plan:</h4>
+    <ul>
+      <li>30-minute run, bodyweight exercises.</li>
+      <li>Gym session focusing on full-body strength training.</li>
+      <li>Rest or engage in a recreational sport.</li>
+      <li>
+        <a href="https://www.planetfitness.com/community/articles/beginner-workout-plan-your-first-week-gym" target="_blank">
+          Beginner workout plan for your first week at the gym
+        </a>
+        <br>
+        <img src="https://via.placeholder.com/150?text=Normal+Fitness+Plan" alt="Normal Fitness Plan">
+      </li>
+    </ul>
+  `,
+  Overweight: `
+    <h4>Overweight Plan:</h4>
+    <ul>
+      <li>45-minute brisk walk, low-impact cardio.</li>
+      <li>Strength training with focus on core and legs.</li>
+      <li>Active recovery with swimming or cycling.</li>
+      <li>
+        <a href="https://www.nyp.org/patients-and-visitors/advances-consumers/issues/exercising-when-overweight-moderation-is-key" target="_blank">
+          Exercising when overweight: moderation is key
+        </a>
+        <br>
+        <img src="https://via.placeholder.com/150?text=Overweight+Exercise+Plan" alt="Overweight Exercise Plan">
+      </li>
+    </ul>
+  `,
+  Obese: `
+    <h4>Obese Plan:</h4>
+    <ul>
+      <li>Low-impact walking or water aerobics.</li>
+      <li>Chair-assisted strength exercises.</li>
+      <li>Light yoga or stretching for mobility.</li>
+      <li>
+        <a href="https://www.medicalnewstoday.com/articles/exercise-for-obese-people#best-types" target="_blank">
+          Best exercises for obese individuals
+        </a>
+        <br>
+        <img src="https://via.placeholder.com/150?text=Obese+Fitness+Plan" alt="Obese Fitness Plan">
+      </li>
+    </ul>
+  `
+};
+
 
       const exercisePlan = document.getElementById('exercise-plan');
       exercisePlan.innerHTML = plans[weightClassification] || '<p>No plan available for the selected classification.</p>';

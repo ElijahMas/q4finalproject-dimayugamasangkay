@@ -159,10 +159,12 @@ footer {
     color: #FB5D1C;
 }
 
-#output a:link {
-  color: black;
+#exercise-plan a {
+    color: #FB5D1C; /* Bright orange color */
+    text-decoration: none;
 }
 
-#output a:visited {
-  color: black;
+#exercise-plan a:hover {
+    color: #FF7F50; /* Lighter shade of orange on hover */
+    text-decoration: underline;
 }
