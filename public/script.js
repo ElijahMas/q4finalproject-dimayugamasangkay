@@ -115,8 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
           <li>Stay active daily to maintain mobility and prevent muscle loss.</li>
         </ul>
       `
+      
       : plans[weightClassification] || '<p>No plan available for the selected classification.</p>';
-
+  
+      
       const exercisePlan = document.getElementById('exercise-plan');
       exercisePlan.innerHTML = plans[weightClassification] || '<p>No plan available for the selected classification.</p>';
       document.getElementById('output-section').style.display = 'block';
