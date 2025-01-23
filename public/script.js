@@ -52,12 +52,36 @@ document.addEventListener('DOMContentLoaded', function () {
       
       const age = parseInt(document.getElementById('age').value);
       const weightClassification = weightClassificationInput.value;
-      
-      if (isNaN(age) || age <= 0) {
-      alert("Please enter a valid age.");
-      return;
-    }
 
+      if (isNaN(age) || age <= 0) {
+        alert("Please enter a valid age.");
+        return;
+      }
+
+      // Define age-based plans
+      const ageBasedPlan = age < 16
+        ? `
+          <h4>Plan for Under 16:</h4>
+          <ul>
+            <li>Focus on fun physical activities like playing sports, dancing, or biking.</li>
+            <li>Avoid heavy strength training; instead, use light weights or bodyweight exercises.</li>
+            <li>Ensure a balanced diet with adequate nutrition for growth.</li>
+            <li><a href="https://www.healthline.com/health/fitness/exercise-for-teenagers#for-overweight-teens">Important tips for excercising while young!</a></li>
+          </ul>
+        `
+        : age > 64
+        ? `
+          <h4>Plan for Over 64:</h4>
+          <ul>
+            <li>Engage in low-impact exercises like walking, swimming, or tai chi.</li>
+            <li>Focus on flexibility, balance, and light strength training.</li>
+            <li>Stay active daily to maintain mobility and prevent muscle loss.</li>
+            <li><a href="https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-older-adults/">More information about excercise for older adults<a></li>
+          </ul>
+        `
+        : null;
+
+      // Define weight classification plans
       const plans = {
         Underweight: `
           <h4>Underweight Plan:</h4>
@@ -96,31 +120,13 @@ document.addEventListener('DOMContentLoaded', function () {
           </ul>
         `
       };
-      
-      const ageBasedPlan = age < 16
-      ? `
-        <h4>Plan for Under 16:</h4>
-        <ul>
-          <li>Focus on fun physical activities like playing sports, dancing, or biking.</li>
-          <li>Avoid heavy strength training; instead, use light weights or bodyweight exercises.</li>
-          <li>Ensure a balanced diet with adequate nutrition for growth.</li>
-        </ul>
-      `
-      : age > 64
-      ? `
-        <h4>Plan for Over 64:</h4>
-        <ul>
-          <li>Engage in low-impact exercises like walking, swimming, or tai chi.</li>
-          <li>Focus on flexibility, balance, and light strength training.</li>
-          <li>Stay active daily to maintain mobility and prevent muscle loss.</li>
-        </ul>
-      `
-      
-      : plans[weightClassification] || '<p>No plan available for the selected classification.</p>';
-  
-      
+
+      // Combine age-based and weight-classification plans
+      const selectedPlan = ageBasedPlan || plans[weightClassification] || '<p>No plan available for the selected classification or age.</p>';
+
+      // Update the exercise plan and show the output
       const exercisePlan = document.getElementById('exercise-plan');
-      exercisePlan.innerHTML = plans[weightClassification] || '<p>No plan available for the selected classification.</p>';
+      exercisePlan.innerHTML = selectedPlan;
       document.getElementById('output-section').style.display = 'block';
     });
   }
