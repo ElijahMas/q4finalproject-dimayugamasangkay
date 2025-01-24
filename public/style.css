@@ -107,6 +107,12 @@ footer {
   color: black;
   top: 50px;
   left: 100px;
+  display: flex; 
+  gap: 10px; 
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .references a:hover { 
