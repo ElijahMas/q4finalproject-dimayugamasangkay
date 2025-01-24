@@ -48,12 +48,13 @@
       <input type="number" id="age" placeholder="Enter age" required>
 
       <label for="health-issues">Health Issues:</label>
-      <select id="health-issues">
-        <option value="">None</option>
-        <option value="Diabetes">Diabetes</option>
-        <option value="Heart Disease">Heart Disease</option>
-        <option value="Hypertension">Hypertension</option>
-      </select>
+        <select id="health-issues" name="health-issues">
+          <option value="none">None</option>
+          <option value="diabetes">Diabetes</option>
+          <option value="hypertension">Hypertension</option>
+          <option value="obesity">Obesity</option>
+          <option value="others">Others</option> <!-- New Option -->
+        </select>
 
       <button id="calculate">Calculate</button>
     </section>

@@ -19,16 +19,21 @@ document.addEventListener('DOMContentLoaded', function () {
       const bmi = (weight / (height * height)).toFixed(1);
       let weightClassification = '';
 
-      if (bmi < 18.5) {
-        weightClassification = 'Underweight';
-      } else if (bmi >= 18.5 && bmi < 24.9) {
-        weightClassification = 'Normal';
-      } else if (bmi >= 25 && bmi < 29.9) {
-        weightClassification = 'Overweight';
-      } else {
-        weightClassification = 'Obese';
-      }
+      let stars;
 
+      if (bmi < 18.5) {
+        stars = 4; // Underweight gets 4 stars
+      }   
+      else if (bmi >= 18.5 && bmi < 24.9) {
+      stars = 5; // Normal weight gets 5 stars
+      } 
+      else if (bmi >= 25 && bmi < 29.9) {
+        stars = 4; // Overweight gets 4 stars
+      } 
+      else {
+        stars = 3; // Obese gets 3 stars
+      }
+        
       const healthIndicator = weightClassification === 'Normal' ? '⭐⭐⭐⭐⭐' : '⭐⭐⭐';
 
       document.getElementById('bmi-result').textContent = bmi;
