@@ -90,6 +90,10 @@ a:active {
   color: #50525E;
 }
 
+article a:link {
+  color: black;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -169,4 +173,3 @@ footer {
     text-decoration: underline;
 }
 
-.references
