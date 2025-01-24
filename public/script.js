@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const height = parseFloat(document.getElementById('height').value) / 100;
       const weight = parseFloat(document.getElementById('weight').value);
       const age = parseInt(document.getElementById('age').value);
-
+      const healthIssues = document.getElementById('health-issues').value;
+      
       if (isNaN(height) || isNaN(weight) || isNaN(age) || height <= 0 || weight <= 0 || age <= 0) {
         alert('Please enter valid numeric values for height, weight, and age.');
         return;
@@ -19,9 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
       const bmi = (weight / (height * height)).toFixed(1);
       let weightClassification = '';
 
-      let stars;
-
       if (bmi < 18.5) {
+        weightClassification = 'Underweight';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        weightClassification = 'Normal';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        weightClassification = 'Overweight';
+      } else {
+        weightClassification = 'Obese';
+      }
+      
+      let stars;
+      
+      if (healthIssues != "none") {
+        stars = 3
+      }
+      else if (bmi < 18.5) {
         stars = 4; // Underweight gets 4 stars
       }   
       else if (bmi >= 18.5 && bmi < 24.9) {
@@ -33,8 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
       else {
         stars = 3; // Obese gets 3 stars
       }
-        
-      const healthIndicator = weightClassification === 'Normal' ? '⭐⭐⭐⭐⭐' : '⭐⭐⭐';
+      
+      if (healthIssues != "none" && weightClassification != "Normal")
+        stars = stars - 1;
+      
+      const healthIndicator = '⭐'.repeat(stars);
 
       document.getElementById('bmi-result').textContent = bmi;
       document.getElementById('weight-classification').textContent = weightClassification;
