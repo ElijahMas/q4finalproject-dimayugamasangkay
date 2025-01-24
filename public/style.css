@@ -105,8 +105,17 @@ footer {
 
 .references a { 
   color: black;
+  top: 50px;
+  left: 100px;
 }
 
+.references a:hover { 
+  color: #FB5D1C;
+}
+
+.references a:active {
+  color: #FAF9F8;
+}
 
 /* Resources Page Specific Styles */
 .resources-section {
