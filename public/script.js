@@ -153,3 +153,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Fitness Quiz Logic
+  const quizForm = document.getElementById('quiz-form');
+  if (quizForm) {
+    quizForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      console.log("Quiz submitted");
+
+      const answers = {
+        q1: "B",
+        q2: "A",
+        q3: "C",
+        q4: "A",
+        q5: "D"
+      };
+
+      let score = 0;
+      Object.keys(answers).forEach((question) => {
+        const selectedOption = document.querySelector(input[name='${question}']:checked);
+        if (selectedOption && selectedOption.value === answers[question]) {
+          score++;
+        }
+      });
+
+      let message = "";
+      if (score === 5) {
+        message = "Excellent! You have great fitness knowledge.";
+      } else if (score >= 3) {
+        message = "Good job! You know quite a bit, but there's room to learn more.";
+      } else {
+        message = "Keep learning! Fitness knowledge is key to a healthy lifestyle.";
+      }
+
+      document.getElementById('quiz-result').textContent = Your score: ${score}/5 - ${message};
+      document.getElementById('quiz-output').style.display = 'block';
+    });
+  }
+});
