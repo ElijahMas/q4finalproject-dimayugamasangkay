@@ -62,16 +62,16 @@ input, select, button {
 
 /* Sidebar */
 .fixed-sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: 185px;
     height: 75%;
     background-color: #40414F;
-    padding: 20px 10px;
+    padding: 15px 10px;
     color: white;
     line-height: 75px;
-    opacity: 0.8;
+    margin-top: 100px;
 }
 
 /* Links */
@@ -85,7 +85,6 @@ a:visited {
 
 a:hover {
   color: #FB5D1C;
-  opacity: 1.0;
 }
 
 a:active {
