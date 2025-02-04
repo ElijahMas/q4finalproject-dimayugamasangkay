@@ -154,12 +154,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// Fitness Quiz Logic
+  // Fitness Quiz Logic
   const quizForm = document.getElementById('quiz-form');
   if (quizForm) {
     quizForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      console.log("Quiz submitted");
+      console.log("Quiz submitted event fired!"); // Debugging
 
       const answers = {
         q1: "B",
@@ -170,8 +170,12 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
       let score = 0;
+
       Object.keys(answers).forEach((question) => {
-      const selectedOption = document.querySelector(`input[name='${question}']:checked`);
+        const selectedOption = document.querySelector(`input[name='${question}']:checked`);
+        
+        console.log(`Checking question ${question}, selected:`, selectedOption ? selectedOption.value : "None"); // Debugging
+        
         if (selectedOption && selectedOption.value === answers[question]) {
           score++;
         }
@@ -186,8 +190,10 @@ document.addEventListener('DOMContentLoaded', function () {
         message = "Keep learning! Fitness knowledge is key to a healthy lifestyle.";
       }
 
-      document.getElementById('quiz-result').textContent = Your score: ${score}/5 - ${message};
+      console.log(`Final Score: ${score}`); // Debugging
+
+      document.getElementById('quiz-result').textContent = `Your score: ${score}/5 - ${message}`;
       document.getElementById('quiz-output').style.display = 'block';
     });
   }
-});
+
