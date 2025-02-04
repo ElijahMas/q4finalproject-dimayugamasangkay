@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       let score = 0;
       Object.keys(answers).forEach((question) => {
-        const selectedOption = document.querySelector(input[name='${question}']:checked);
+      const selectedOption = document.querySelector(`input[name='${question}']:checked`);
         if (selectedOption && selectedOption.value === answers[question]) {
           score++;
         }
