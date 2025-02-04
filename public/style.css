@@ -52,6 +52,7 @@ label {
     display: block;
     margin: 10px 0 5px;
 }
+
 input, select, button {
     width: 50%;
     padding: 10px;
@@ -189,17 +190,17 @@ footer {
 }
 
 /* Form Styling */
-input, select, button {
+#fitnessQuizPage input, #fitnessQuizPage select, #fitnessQuizPage button {
   width: 100%;
-  padding: 20px;
-  margin: 10px 0;
+  padding: 10px;
+  margin: 5px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 18px;
 }
 
 /* Buttons */
-button {
+#fitnessQuizPage button {
   background: #007bff;
   color: white;
   border: none;
@@ -207,7 +208,7 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
+#fitnessQuizPage button:hover {
   background: #0056b3;
 }
 
@@ -222,12 +223,12 @@ button:hover {
 }
 
 /* Quiz Section */
-.quiz-question {
+#fitnessQuizPage .quiz-question {
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
-#quiz-output {
+#fitnessQuizPage #quiz-output {
   display: none;
   margin-top: 20px;
   padding: 15px;
