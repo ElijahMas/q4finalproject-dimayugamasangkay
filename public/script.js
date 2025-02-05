@@ -181,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
         q3: "C",
         q4: "A",
         q5: "D"
+        q6:
       };
 
       let score = 0;
