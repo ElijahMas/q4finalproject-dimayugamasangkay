@@ -157,6 +157,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // Fitness Quiz Logic
   const quizForm = document.getElementById('quiz-form');
   if (quizForm) {
+    
+  document.addEventListener('DOMContentLoaded', function () {
+  const startScreen = document.getElementById('start-screen');
+  const quizContainer = document.getElementById('quiz-container');
+  const startButton = document.getElementById('start-quiz-button');
+
+  if (startButton) {
+    startButton.addEventListener('click', function () {
+      startScreen.style.display = 'none';  // Hide start screen
+      quizContainer.style.display = 'block';  // Show quiz
+    });
+  }
+});
+
     quizForm.addEventListener('submit', function (event) {
       event.preventDefault();
       console.log("Quiz submitted event fired!"); // Debugging

@@ -39,54 +39,57 @@
       <button id="start-quiz-button">Start Quiz</button>
     </div>
     
-    <form id="quiz-form">
-      <fieldset>
-        <legend>1. What is the recommended amount of moderate exercise per week for adults?</legend>
-        <label><input type="radio" name="q1" value="A"> 75 minutes</label>
-        <label><input type="radio" name="q1" value="B"> 150 minutes</label>
-        <label><input type="radio" name="q1" value="C"> 300 minutes</label>
-        <label><input type="radio" name="q1" value="D"> 500 minutes</label>
-      </fieldset>
+    <div id="quiz-container" style="display: none;">
+      <form id="quiz-form">
+        <fieldset>
+          <legend>1. What is the recommended amount of moderate exercise per week for adults?</legend>
+          <label><input type="radio" name="q1" value="A"> 75 minutes</label>
+          <label><input type="radio" name="q1" value="B"> 150 minutes</label>
+          <label><input type="radio" name="q1" value="C"> 300 minutes</label>
+          <label><input type="radio" name="q1" value="D"> 500 minutes</label>
+        </fieldset>
 
-      <fieldset>
-        <legend>2. Which macronutrient is the body’s primary source of energy?</legend>
-        <label><input type="radio" name="q2" value="A"> Carbohydrates</label>
-        <label><input type="radio" name="q2" value="B"> Proteins</label>
-        <label><input type="radio" name="q2" value="C"> Fats</label>
-        <label><input type="radio" name="q2" value="D"> Vitamins</label>
-      </fieldset>
+        <fieldset>
+          <legend>2. Which macronutrient is the body’s primary source of energy?</legend>
+          <label><input type="radio" name="q2" value="A"> Carbohydrates</label>
+          <label><input type="radio" name="q2" value="B"> Proteins</label>
+          <label><input type="radio" name="q2" value="C"> Fats</label>
+          <label><input type="radio" name="q2" value="D"> Vitamins</label>
+        </fieldset>
 
-      <fieldset>
-        <legend>3. Which exercise is best for building lower body strength?</legend>
-        <label><input type="radio" name="q3" value="A"> Push-ups</label>
-        <label><input type="radio" name="q3" value="B"> Bench press</label>
-        <label><input type="radio" name="q3" value="C"> Squats</label>
-        <label><input type="radio" name="q3" value="D"> Bicep curls</label>
-      </fieldset>
+        <fieldset>
+          <legend>3. Which exercise is best for building lower body strength?</legend>
+          <label><input type="radio" name="q3" value="A"> Push-ups</label>
+          <label><input type="radio" name="q3" value="B"> Bench press</label>
+          <label><input type="radio" name="q3" value="C"> Squats</label>
+          <label><input type="radio" name="q3" value="D"> Bicep curls</label>
+        </fieldset>
 
-      <fieldset>
-        <legend>4. What is the main benefit of stretching before a workout?</legend>
-        <label><input type="radio" name="q4" value="A"> Injury prevention</label>
-        <label><input type="radio" name="q4" value="B"> Increased strength</label>
-        <label><input type="radio" name="q4" value="C"> Faster weight loss</label>
-        <label><input type="radio" name="q4" value="D"> None of the above</label>
-      </fieldset>
+        <fieldset>
+          <legend>4. What is the main benefit of stretching before a workout?</legend>
+          <label><input type="radio" name="q4" value="A"> Injury prevention</label>
+          <label><input type="radio" name="q4" value="B"> Increased strength</label>
+          <label><input type="radio" name="q4" value="C"> Faster weight loss</label>
+          <label><input type="radio" name="q4" value="D"> None of the above</label>
+        </fieldset>
 
-      <fieldset>
-        <legend>5. Which type of training is best for improving cardiovascular fitness?</legend>
-        <label><input type="radio" name="q5" value="A"> Strength training</label>
-        <label><input type="radio" name="q5" value="B"> Yoga</label>
-        <label><input type="radio" name="q5" value="C"> Pilates</label>
-        <label><input type="radio" name="q5" value="D"> High-intensity interval training (HIIT)</label>
-      </fieldset>
+        <fieldset>
+          <legend>5. Which type of training is best for improving cardiovascular fitness?</legend>
+          <label><input type="radio" name="q5" value="A"> Strength training</label>
+          <label><input type="radio" name="q5" value="B"> Yoga</label>
+          <label><input type="radio" name="q5" value="C"> Pilates</label>
+          <label><input type="radio" name="q5" value="D"> High-intensity interval training (HIIT)</label>
+        </fieldset>
 
-      <button type="submit">Submit Quiz</button>
-    </form>
+        <button type="submit">Submit Quiz</button>
+      </form>
+      
 
-    <section id="quiz-output" style="display: none;">
-      <h3>Quiz Results:</h3>
-      <p id="quiz-result"></p>
-    </section>
+      <section id="quiz-output" style="display: none;">
+        <h3>Quiz Results:</h3>
+        <p id="quiz-result"></p>
+      </section>
+    </div>
   </main>
 
   <aside class="fixed-sidebar">
