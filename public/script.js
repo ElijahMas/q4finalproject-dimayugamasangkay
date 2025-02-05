@@ -171,17 +171,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+  if (quizForm) {
     quizForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      console.log("Quiz submitted event fired!"); // Debugging
+      console.log("Quiz submitted");
 
       const answers = {
         q1: "B",
         q2: "A",
         q3: "C",
         q4: "A",
-        q5: "D"
-        q6:
+        q5: "D",
+        q6: "B",
+        q7: "C",
+        q8: "B",
+        q9: "B",
+        q10: "C"
       };
 
       let score = 0;
@@ -210,5 +215,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('quiz-result').textContent = `Your score: ${score}/5 - ${message}`;
       document.getElementById('quiz-output').style.display = 'block';
     });
+  }
   }
 
