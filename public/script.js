@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       let message = "";
       if (score >= 9) {
-        message = "Excellent! You have great fitness knowledge.";
+        message = "🎉🎉Excellent! You have great fitness knowledge.🎉🎉";
         document.getElementById("quiz-output").style.backgroundColor = '#77DD76';
         document.getElementById("quiz-output").style.color = '#185f18';
       } else if (score >= 6) {
