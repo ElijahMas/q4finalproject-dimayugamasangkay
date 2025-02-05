@@ -202,17 +202,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       let message = "";
-      if (score === 5) {
+      if (score >= 9) {
         message = "Excellent! You have great fitness knowledge.";
-      } else if (score >= 3) {
+      } else if (score >= 6) {
         message = "Good job! You know quite a bit, but there's room to learn more.";
-      } else {
+      } else if (score > 3) {
         message = "Keep learning! Fitness knowledge is key to a healthy lifestyle.";
+      } else {
+        message = "Your mom is dissapointed in you.";
       }
-
+      
       console.log(`Final Score: ${score}`); // Debugging
 
-      document.getElementById('quiz-result').textContent = `Your score: ${score}/5 - ${message}`;
+      document.getElementById('quiz-result').textContent = `Your score: ${score}/10 - ${message}`;
       document.getElementById('quiz-output').style.display = 'block';
     });
   }
