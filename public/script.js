@@ -198,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (selectedOption && selectedOption.value === answers[question]) {
           score++;
+          
         }
       });
 
@@ -208,9 +209,11 @@ document.addEventListener('DOMContentLoaded', function () {
         message = "Good job! You know quite a bit, but there's room to learn more.";
       } else if (score > 3) {
         message = "Keep learning! Fitness knowledge is key to a healthy lifestyle.";
+        document.getElementById("quiz-output").style.backgroundColor = '#FFEE8C';
       } else {
         message = "Your dad is dissapointed in you.";
-        document.getElementById("quiz-output").style.color="blue";
+        document.getElementById("quiz-output").style.backgroundColor = '#FF746C';
+        document.getElementById("quiz-output").style.color = '#5a0d1d';
       }
       
       console.log(`Final Score: ${score}`); // Debugging
