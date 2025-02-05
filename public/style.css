@@ -237,3 +237,13 @@ footer {
   font-size: 18px;
   border-radius: 10px;
 }
+
+#fitnessQuizPage .quiz-container {
+  background-color: rgba(0, 0, 0, 0.5); /* Example: Background with opacity */
+  padding: 20px;
+}
+
+#fitnessQuizPage .quiz-title {
+  color: #ff6600;
+  font-size: 24px;
+}
