@@ -205,11 +205,16 @@ document.addEventListener('DOMContentLoaded', function () {
       let message = "";
       if (score >= 9) {
         message = "Excellent! You have great fitness knowledge.";
+        document.getElementById("quiz-output").style.backgroundColor = '#77DD76';
+        document.getElementById("quiz-output").style.color = '#185f18';
       } else if (score >= 6) {
         message = "Good job! You know quite a bit, but there's room to learn more.";
+        document.getElementById("quiz-output").style.backgroundColor = '#D2FCBB';
+        document.getElementById("quiz-output").style.color = '#379604';
       } else if (score > 3) {
         message = "Keep learning! Fitness knowledge is key to a healthy lifestyle.";
         document.getElementById("quiz-output").style.backgroundColor = '#FFEE8C';
+        document.getElementById("quiz-output").style.color = '#968000';
       } else {
         message = "Your dad is dissapointed in you.";
         document.getElementById("quiz-output").style.backgroundColor = '#FF746C';
