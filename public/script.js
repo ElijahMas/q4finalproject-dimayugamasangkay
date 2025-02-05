@@ -209,7 +209,8 @@ document.addEventListener('DOMContentLoaded', function () {
       } else if (score > 3) {
         message = "Keep learning! Fitness knowledge is key to a healthy lifestyle.";
       } else {
-        message = "Your mom is dissapointed in you.";
+        message = "Your dad is dissapointed in you.";
+        document.getElementById("quiz-output").style.color="blue";
       }
       
       console.log(`Final Score: ${score}`); // Debugging
