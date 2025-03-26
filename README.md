@@ -1,9 +1,9 @@
 
 **Updates Description**
 
-To enhance our website, we will be incorporating persistent data storage to improve user experience by storing their key information  such as their bmi and fitness plan. By saving this data, users can revisit their fitness progress and receive correctly tailored recommendations over time.
+To enhance our website, we will be incorporating persistent data storage to improve user experience by storing their key information such as the users name, their bmi, and fitness plan. By saving this data, users can revisit their fitness progress and receive correctly tailored recommendations over time.
 
-Additionally, the update will include two new web pages: a user profile page that will display user details, and a data management page that will allow users to manage (create, read, update, delete) their data, ensuring relevant tracking and advice.
+Additionally, the update will include two new web pages: a user profile page that will let the user input their details, and a data management page that will allow users to manage (create, read, update, delete) their data, ensuring relevant tracking and advice.
 
 **Data to be saved**
 
