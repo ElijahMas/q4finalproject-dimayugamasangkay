@@ -27,7 +27,6 @@ Additionally, the update will include two new web pages: a user profile page tha
     "user_id": "unique-user-id",
     "bmi": "float",
     "weight_category": "text-string",
-    "quiz_score": "integer",
     "recommended_plan": "text-string",
     "last_updated": "YYYY-MM-DD"
   }
