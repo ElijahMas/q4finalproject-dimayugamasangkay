@@ -1,14 +1,42 @@
-**Title:** FitFormula
 
 **Updates Description**
 
-To enhance our website, we will be incorporating persistent data storage to improve user experience and maintain key fitness-related information. This update will introduce a database to store user-generated data such as BMI calculations, quiz results, and personalized fitness plans. By saving this data, users can revisit their fitness progress and receive tailored recommendations over time.
+To enhance our website, we will be incorporating persistent data storage to improve user experience by storing their key information  such as their bmi and fitness plan. By saving this data, users can revisit their fitness progress and receive correctly tailored recommendations over time.
 
-Additionally, the update will include two new web pages:
+Additionally, the update will include two new web pages: a user profile page that will display user details, and a data management page that will allow users to manage (create, read, update, delete) their data, ensuring relevant tracking and advice.
 
-User Profile Page – Displays user details, fitness history, and progress.
+**Data to be saved**
 
-Data Management Page – Allows users to manage (Create, Read, Update, Delete - CRUD) their fitness-related data, ensuring better personalization and tracking
+1. User account data
+- To manage user authentication and to provide a personalized experience.
+{
+  "account": {
+    "username": "text-string",
+    "name": "text-string",
+    "dob": "YYYY-MM-DD",
+    "password": "text-string",
+    "email": "email-formatted-text-string",
+    "profile": "text-link-to-uploaded-pic"
+  }
+}
+
+2. Fitness Data
+- To store user-specific fitness records and recommendations.
+{
+  "fitness_data": {
+    "user_id": "unique-user-id",
+    "bmi": "float",
+    "weight_category": "text-string",
+    "quiz_score": "integer",
+    "recommended_plan": "text-string",
+    "last_updated": "YYYY-MM-DD"
+  }
+}
+
+
+
+
+**Title:** FitFormula
 
 **Description:** Welcome to FitFormula!
 
