@@ -268,3 +268,32 @@ footer {
   color: #ff6600;
   font-size: 24px;
 }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.header-left,
+.header-right {
+  flex: 1;
+  text-align: center;
+}
+
+.header-center {
+  flex: 2;
+  text-align: center;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0074cc;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
