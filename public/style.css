@@ -346,6 +346,10 @@ footer {
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
+.form-page,
+.profile-page {
+  padding: 0 20px;
+}
 
 .form-card input,
 .profile-card input {
