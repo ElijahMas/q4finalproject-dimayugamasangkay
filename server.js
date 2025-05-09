@@ -12,7 +12,6 @@ const app = express();
 
 //Serves static files inside the public folder
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
@@ -21,14 +20,14 @@ app.use(session({
     saveUninitialized: true
 }));
 
-//Sets a basic route index.hbs when website initially starts and when home is clicked from the nav bar or whenever a process needs to go back to home 
+// Serve the home page
 app.get('/', (req, res) => {
-    res.render('index.hbs');
-})
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Show login page
 app.get('/login', (req, res) => {
-    res.render('login.hbs');
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
 // Process login form
@@ -47,13 +46,7 @@ app.post('/login', (req, res) => {
 
 // Show profile page
 app.get('/profile', (req, res) => {
-    const user = req.session.user;
-
-    if (!user) {
-        return res.redirect('/login');
-    }
-
-    res.render('profile.hbs', { user });
+    res.sendFile(path.join(__dirname, 'public', 'profile.html'));
 });
 
 
