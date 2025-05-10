@@ -1,40 +1,61 @@
 const express = require('express');
-// body-parser is used to read data payload from the http request body
-const bodyParser = require('body-parser'); 
-//  path is used to set default directories for MVC and also for the static files
-const path = require('path'); 
-// include the defined package
-
+const bodyParser = require('body-parser');
+const path = require('path');
 const session = require('express-session');
-
 
 const app = express();
 
-//Serves static files inside the public folder
+// Serve static files from public/
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({ extended: true }));
 
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); // Required for JSON body in /save-info
+
+// Express-session middleware
 app.use(session({
-    secret: 'fitformula_secret_key', // Use a strong secret in production
+    secret: 'fitformula_secret_key',
     resave: false,
     saveUninitialized: true
 }));
 
-// Serve the home page
+// Set view engine
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'src', 'pages'));
+
+// Routes
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.render('index', { user: req.session.user }); // So username can be passed if logged in
 });
 
-// Show login page
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login.html'));
+    res.render('login');
 });
 
-// Process login form
 app.post('/login', (req, res) => {
     const { username, email, password } = req.body;
 
     // Save user info in session
+    req.session.user = { username, email, password };
+
+    res.redirect('/profile');
+});
+
+app.get('/profile', (req, res) => {
+    if (!req.session.user) {
+        return res.redirect('/login');
+    }
+
+    res.render('profile', {
+        user: req.session.user,
+        userInfo: req.session.userInfo || null
+    });
+});
+
+app.post('/update', (req, res) => {
+    const { username, email, password } = req.body;
+
+    // Update session data
     req.session.user = {
         username,
         email,
@@ -44,12 +65,44 @@ app.post('/login', (req, res) => {
     res.redirect('/profile');
 });
 
-// Show profile page
-app.get('/profile', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'profile.html'));
+// Handle saving user health info from index page
+app.post('/save-info', (req, res) => {
+  const { height, weight, age, healthIssues, bmi, plan, classification } = req.body;
+
+  req.session.userInfo = {
+    height,
+    weight,
+    age,
+    healthIssues,
+    bmi,
+    classification,
+    plan
+  };
+
+  res.json({ success: true });
 });
 
+app.post('/delete-account', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).send('Error deleting account');
+    }
+    res.redirect('/login');
+  });
+});
 
-// This will create a web service for your own project
+app.post('/save-plan', (req, res) => {
+  const { plan } = req.body;
+
+  if (!req.session.userInfo) {
+    req.session.userInfo = {};
+  }
+
+  req.session.userInfo.exercisePlan = plan;
+
+  res.json({ success: true });
+});
+
+// Start server
 const port = 3000;
-app.listen(port, () => console.log(`App listening to port ${port}`));
+app.listen(port, () => console.log(`App listening on port ${port}`));
