@@ -2,63 +2,93 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log("Script loaded");
 
   // Homepage Logic
-  const calculateButton = document.getElementById('calculate');
-  if (calculateButton) {
+const calculateButton = document.getElementById('calculate');
+
+if (calculateButton) {
     calculateButton.addEventListener('click', function () {
-      console.log("Calculate BMI button clicked");
+    
+    console.log("Calculate BMI button clicked");
 
-      const height = parseFloat(document.getElementById('height').value) / 100;
-      const weight = parseFloat(document.getElementById('weight').value);
-      const age = parseInt(document.getElementById('age').value);
-      const healthIssues = document.getElementById('health-issues').value;
-      
-      if (isNaN(height) || isNaN(weight) || isNaN(age) || height <= 0 || weight <= 0 || age <= 0) {
-        alert('Please enter valid numeric values for height, weight, and age.');
-        return;
-      }
+    const height = parseFloat(document.getElementById('height').value) / 100;
+    const weight = parseFloat(document.getElementById('weight').value);
+    const age = parseInt(document.getElementById('age').value);
+    const healthIssues = document.getElementById('health-issues').value;
 
-      const bmi = (weight / (height * height)).toFixed(1);
-      let weightClassification = '';
+    if (isNaN(height) || isNaN(weight) || isNaN(age) || height <= 0 || weight <= 0 || age <= 0) {
+      alert('Please enter valid numeric values for height, weight, and age.');
+      return;
+    }
 
-      if (bmi < 18.5) {
-        weightClassification = 'Underweight';
-      } else if (bmi >= 18.5 && bmi < 24.9) {
-        weightClassification = 'Normal';
-      } else if (bmi >= 25 && bmi < 29.9) {
-        weightClassification = 'Overweight';
+    const bmi = (weight / (height * height)).toFixed(1);
+    let weightClassification = '';
+
+    if (bmi < 18.5) {
+      weightClassification = 'Underweight';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      weightClassification = 'Normal';
+    } else if (bmi >= 25 && bmi < 29.9) {
+      weightClassification = 'Overweight';
+    } else {
+      weightClassification = 'Obese';
+    }
+
+    let stars;
+
+    if (healthIssues !== "none") {
+      stars = 3;
+    } else if (bmi < 18.5) {
+      stars = 4;
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      stars = 5;
+    } else if (bmi >= 25 && bmi < 29.9) {
+      stars = 4;
+    } else {
+      stars = 3;
+    }
+
+    if (healthIssues !== "none" && weightClassification !== "Normal") {
+      stars -= 1;
+    }
+
+    const healthIndicator = '⭐'.repeat(stars);
+
+    // Display results
+    document.getElementById('bmi-result').textContent = bmi;
+    document.getElementById('weight-classification').textContent = weightClassification;
+    document.getElementById('health-indicator').textContent = healthIndicator;
+    document.getElementById('output-section').style.display = 'block';
+
+    // Save info to server
+    fetch('/save-info', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      height: (height * 100).toFixed(1),
+      weight,
+      age,
+      healthIssues,
+      bmi,
+      classification: weightClassification,
+      plan: healthIndicator
+      })
+    })
+
+    .then(res => res.json())
+    .then(data => {
+      if (!data.success) {
+        alert("There was a problem saving your information.");
       } else {
-        weightClassification = 'Obese';
+        console.log("Health info saved to session.");
       }
-      
-      let stars;
-      
-      if (healthIssues != "none") {
-        stars = 3
-      }
-      else if (bmi < 18.5) {
-        stars = 4; // Underweight gets 4 stars
-      }   
-      else if (bmi >= 18.5 && bmi < 24.9) {
-      stars = 5; // Normal weight gets 5 stars
-      } 
-      else if (bmi >= 25 && bmi < 29.9) {
-        stars = 4; // Overweight gets 4 stars
-      } 
-      else {
-        stars = 3; // Obese gets 3 stars
-      }
-      
-      if (healthIssues != "none" && weightClassification != "Normal")
-        stars = stars - 1;
-      
-      const healthIndicator = '⭐'.repeat(stars);
-
-      document.getElementById('bmi-result').textContent = bmi;
-      document.getElementById('weight-classification').textContent = weightClassification;
-      document.getElementById('health-indicator').textContent = healthIndicator;
-      document.getElementById('output-section').style.display = 'block';
+    })
+    .catch(err => {
+      console.error("Error saving info:", err);
     });
-  }
+  });
+}
+
 
   // Personal Assistance Logic
   const generatePlanButton = document.getElementById('generate-plan-button');
@@ -150,9 +180,23 @@ document.addEventListener('DOMContentLoaded', function () {
       const exercisePlan = document.getElementById('exercise-plan');
       exercisePlan.innerHTML = selectedPlan;
       document.getElementById('output-section').style.display = 'block';
-    });
-  }
-});
+      exercisePlan.innerHTML = selectedPlan;
+      
+      fetch('/save-plan', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+        body: JSON.stringify({ plan: selectedPlan })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Plan saved:", data);
+      })
+      .catch(error => console.error("Error saving plan:", error));
+          });
+        }
+      });
 
   // Fitness Quiz Logic
   const quizForm = document.getElementById('quiz-form');
