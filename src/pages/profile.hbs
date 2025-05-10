@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FitFormula - Your personalized fitness assistant for calculating BMI and creating tailored fitness plans.">
+  <meta name="keywords" content="Fitness, BMI Calculator, Health, Personalized Plans">
+  <meta name="author" content="Masangkay, Elijah & Dimayuga, Manu">
+  
+  <!-- Title -->
+  <title>FitFormula - Profile</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn.glitch.global/1a3379af-7699-458d-bdf8-9fd8f47a5f59/829410b6-f419-4107-a5b3-b2e60e45bf51.image.png?v=1734690946050">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+  
+<body>
+  <!-- Header -->
+<header>
+  <div class="header-left">
+    <a href="/profile">About you</a>
+  </div>
+  <img src="https://cdn.glitch.global/1a3379af-7699-458d-bdf8-9fd8f47a5f59/829410b6-f419-4107-a5b3-b2e60e45bf51.image.png?v=1734690946050" alt="FitFormula Icon" class="header-icon">
+  <h1>FitFormula</h1>
+  <div class="header-right">
+    <a href="/login">Login</a>
+  </div>
+</header>
+
+<main class="profile-page">
+<div class="profile-card">
+  <h2>Welcome, {{user.username}}</h2>
+  <p><strong>Email:</strong> {{user.email}}</p>
+{{#if userInfo}}
+  <h2>Your Fitness Summary</h2>
+  <p><strong>Height:</strong> {{userInfo.height}} cm</p>
+  <p><strong>Weight:</strong> {{userInfo.weight}} kg</p>
+  <p><strong>Age:</strong> {{userInfo.age}}</p>
+  <p><strong>Health Issues:</strong> {{userInfo.healthIssues}}</p>
+  <p><strong>BMI:</strong> {{userInfo.bmi}}</p>
+  <p><strong>Classification:</strong> {{userInfo.classification}}</p>
+  <p><strong>Fitness Indicator:</strong> {{userInfo.plan}}</p>
+  <div id="display-plan">
+  {{#if userInfo.exercisePlan}}
+  <div>{{{userInfo.exercisePlan}}}</div>
+    {{else}}
+      <p>No plan saved yet.</p>
+    {{/if}}
+    {{else}}
+      <p>No fitness data saved yet.</p>
+    {{/if}}
+  </div>
+</div>
+</main>
+
+  
+</body>
+  
+  <aside class="fixed-sidebar">
+    <ul>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="personalAssistance.html">Personal Assistance</a></li>
+      <li><a href="resources.html">Other Resources</a></li>
+      <li><a href="ourSources.html">Our Sources</a></li>
+      <li><a href="fitnessQuiz.html">Test yourself!</a></li>
+    </ul>
+  </aside>
+  
+<footer>
+  <p>&copy; Dimayuga, Masangkay of 9-Cesium. All Rights Reserved.</p>
+  <div id="footer-citations">
+    <h4>References</h4>
+    <ul id="citations-list">
+      Underweight? Healthy tips for adding pounds. (n.d.). Mayo Clinic. https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/underweight/faq-20058429
+    </ul>
+    <ul>
+      Exercising when overweight: moderation is key | NYP. (n.d.). NewYork-Presbyterian. https://www.nyp.org/patients-and-visitors/advances-consumers/issues/exercising-when-overweight-moderation-is-key
+    </ul>
+    <ul>
+      Villines, Z. (2023b, May 22). Exercise for people with obesity. https://www.medicalnewstoday.com/articles/exercise-for-obese-people
+    </ul>
+  </div>
+</footer>
+</html>
